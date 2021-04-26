@@ -4,11 +4,20 @@ var express = require('express');
 var cors = require('cors')
 var app = express();
 
+const port = process.env.PORT || 3000
+
 app.use(cors())
 
 app.get('/', (req, res) => {
-  dbScript.connect()
   res.send('Hello World!');
+})
+
+app.get('/login', (req, res) => {
+  
+})
+
+app.post('/signup', (req, res) => {
+
 })
 
 app.get('/send-email', (req, res) => {
@@ -21,6 +30,6 @@ app.get('/send-email', (req, res) => {
   res.send({isValid: emailScript.isValid(name, email, message)})
 })
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log("App Listening At http://Marketing-Website-Server.obese_clown.repl.co");
 })
